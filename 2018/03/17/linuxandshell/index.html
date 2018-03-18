@@ -1,1 +1,393 @@
-<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><link rel="shortcut icon" href=/static/favicon.ico><title>shippowolf的博客</title><link href=/static/css/app.735a96676d004a3ab4342a23d617337f.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.9c14e4c25ff8a4ffed18.js></script><script type=text/javascript src=/static/js/vendor.e12dc8c9af1f7aa12436.js></script><script type=text/javascript src=/static/js/app.0e5d9a3657c7938b569f.js></script></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>linuxandshell | shippowolf的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Linux常用命令与shell常规语法复习记录（一）面试的时候被面试官问到了一些linux常用命令及shell编程的问题，因为年久失修导致很多常见问题一问三不知很尴尬，写下复习的记录，用于以后的快速复习。">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linuxandshell">
+<meta property="og:url" content="http://yoursite.com/2018/03/17/linuxandshell/index.html">
+<meta property="og:site_name" content="shippowolf的博客">
+<meta property="og:description" content="Linux常用命令与shell常规语法复习记录（一）面试的时候被面试官问到了一些linux常用命令及shell编程的问题，因为年久失修导致很多常见问题一问三不知很尴尬，写下复习的记录，用于以后的快速复习。">
+<meta property="og:image" content="https://s1.ax2x.com/2018/03/16/epmpR.png">
+<meta property="og:updated_time" content="2018-03-18T14:12:10.778Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linuxandshell">
+<meta name="twitter:description" content="Linux常用命令与shell常规语法复习记录（一）面试的时候被面试官问到了一些linux常用命令及shell编程的问题，因为年久失修导致很多常见问题一问三不知很尴尬，写下复习的记录，用于以后的快速复习。">
+<meta name="twitter:image" content="https://s1.ax2x.com/2018/03/16/epmpR.png">
+  
+    <link rel="alternate" href="/atom.xml" title="shippowolf的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://s1.ax2x.com/2018/03/18/egzjA.jpg">
+    <h2 class="author">shippowolf</h2>
+    <h3 class="description">菜鸡，furry，如果能变成大牛那就太好了</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>3</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>1</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>1</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-linuxandshell" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/17/linuxandshell/" class="article-date">
+  <time class="post-time" datetime="2018-03-17T12:38:02.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">17</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linuxandshell
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/technology/">technology</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Linux常用命令与shell常规语法复习记录（一）"><a href="#Linux常用命令与shell常规语法复习记录（一）" class="headerlink" title="Linux常用命令与shell常规语法复习记录（一）"></a>Linux常用命令与shell常规语法复习记录（一）</h1><p>面试的时候被面试官问到了一些linux常用命令及shell编程的问题，因为年久失修导致很多常见问题一问三不知很尴尬，写下复习的记录，用于以后的快速复习。</p>
+<a id="more"></a>
+<h2 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h2><h5 id="权限"><a href="#权限" class="headerlink" title="权限"></a><strong>权限</strong></h5><p>\1-       2—      3—     4—</p>
+<p>-           rwx     rwx    rwx</p>
+<p>属性    u用户  g组   o其他</p>
+<p>l软连接        d目录        -二进制文件        b设备</p>
+<hr>
+<p><strong>杂项</strong></p>
+<p>用户信息/etc/passwd</p>
+<p>影子文件/etc/shadow</p>
+<p>组信息文件/etc/group</p>
+<p>组用户密码文件/etc/gshadow</p>
+<p>/etc/profile是永久性的环境变量,是全局变量，/etc/profile.d/设置的用户生效</p>
+<p>tab自动补全</p>
+<hr>
+<h2 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h2><p><strong>目录处理命令</strong><code>ls（/bin/ls）</code>        </p>
+<p>-a查看所有文件包括特殊文件        -l查看详细信息=ll        </p>
+<p>-d查看目录属性        -h人性化显示            -i显示文件id</p>
+<hr>
+<p><strong>文件及文件夹夹相关</strong></p>
+<p><em>文件夹跳转命令</em> <code>cd</code></p>
+<p>cd..跳转回目录上一页</p>
+<p>pwd显示当前目录位置</p>
+<p><em>创建文件夹</em> <code>mkdir(/bin/mkdir)</code>         -p递归创建</p>
+<p>rmdir删除空目录</p>
+<p><em>复制</em> <code>cp（/bin/cp）</code></p>
+<p>-r复制目录</p>
+<p>-p保持文件属性</p>
+<p>-R递归复制</p>
+<p><em>创建文件</em> <code>touch(/bin/touch)</code></p>
+<p>创建有空格的文件可通过<code>“”</code>区分。</p>
+<p><em>查看文件类型</em><code>file</code></p>
+<p><em>创建硬连接</em> <code>ln</code>        -s创建软连接</p>
+<p>软连接相当于文件目录系统创建指针，硬链接相当于cp，Fid与源文件相同，不可跨分区，不可指向目录</p>
+<p><em>删除</em> <code>rm</code>        -d：直接把欲删除的目录的硬连接数据删除成0，删除该目录；-f：强制删除文件或目录；-i：删除已有文件或目录之前先询问用户；-r或-R：递归处理，将指定目录下的所有文件与子目录一并处理；</p>
+<hr>
+<p><strong>文件显示</strong></p>
+<p><em>显示文件内容</em> <code>cat(/bin/cat)</code>     -n显示行号    -b只给有文本的添加行号    -T不出现制表符</p>
+<p><em>反向显示文件内容</em> <code>tac/user/bin/tac</code>  </p>
+<p><em>一页一页显示</em> <code>more</code></p>
+<p><em>likemore但可往上翻页</em> <code>less</code></p>
+<p><em>查看文件头部</em> <code>head</code></p>
+<p><em>查看文件尾部</em> <code>tail</code></p>
+<hr>
+<p><strong>权限管理命令</strong></p>
+<p><em>更改文件权限</em> <code>chmod（/bin/chmid)</code>    【（u g o a）（+-=）（r w x）】【mode=777】    -R递归修改</p>
+<p><em>更改文件所有者</em> <code>chown</code></p>
+<p><em>更改所有组</em> <code>chgrp</code></p>
+<p><em>显示文件的缺省权限</em> <code>umask</code>        -S 以rwx显示</p>
+<hr>
+<p><strong>查找相关</strong></p>
+<p><em>文件搜索</em> <code>find（/bin/find）</code>    -name 以文件名搜索    -i 不区分大小写    -size  +-？查找大小大于或小于？</p>
+<p>​                            -cmin 以文件更改时间查找    -amin 访问时间查找    -cmin 文件属性改变</p>
+<p>​                            -mmin 文件内容改变        -a两个条件同时满足    -o两个满足一个</p>
+<p>​                            -type 按文件类型查找        .   -inum根据i节点查找</p>
+<p>​                            ？表示一个字符            *代表一个或多个字符</p>
+<p><em>在文件资料库查找</em> <code>locate(/user/bin/locate)</code>        -i不区分大小写</p>
+<p><em>更新文件数据库</em> <code>updatedb</code></p>
+<p><em>查找命令及所在目录</em>  <code>which（/user/bin/which）</code></p>
+<p>查找命令及帮助信息 <code>whereis</code></p>
+<p><em>查看帮助</em> <code>man</code>    -l查看选项内容</p>
+<p><em>查看shell内置命令帮助</em> <code>help</code></p>
+<p><em>查找文件内的某个字符串</em> <code>grep</code>        【grep    字符串    文件】    -i不区分大小写    -v排除指定字符</p>
+<p>​    -n显示行号        -c符合的行数        -e指定每一个模式</p>
+<hr>
+<p><strong>机器管理</strong></p>
+<p><em>关机</em> <code>shutdown`</code>PowerOff`        -c取消上一个关机指令        -h +time关机+时间        -r重启</p>
+<p><em>重启</em><code>reboot</code></p>
+<p><em>查看时间</em><code>date</code></p>
+<p><em>挂</em>载 <code>mount</code></p>
+<p><em>卸载</em> <code>umount</code></p>
+<p><em>查看磁盘使用空间</em> <code>df</code>        -h 人性化显示</p>
+<p><em>特定目录磁盘使用情况</em> <code>pu</code>        -c 列出文件的总大小    -h 人性化    -s每个参数的总计</p>
+<p><em>分区设备管理</em> <code>fsck</code></p>
+<hr>
+<p><strong>进程管理</strong></p>
+<p><em>监测程序</em> <code>ps</code>        -A 列出所有的行程    -w 显示加宽可以显示较多的资讯        -au 显示较详细的资讯</p>
+<p>​                -aux 显示所有包含其他使用者的行程            </p>
+<p>行程拥有者PID: pid        %CPU: 占用的 CPU 使用率        %MEM: 占用的记忆体使用率        </p>
+<p>VSZ: 占用的虚拟记忆体大小            RSS: 占用的记忆体大小        TTY: 终端的次要装置号码     </p>
+<p>STAT: 该行程的状态        D: 不可中断的静止        R: 正在执行中        S: 静止状态        T: 暂停执行</p>
+<p>Z: 不存在但暂时无法消除    W: 没有足够的记忆体分页可分配    &lt;: 高优先序的行程        N: 低优先序的行程</p>
+<p>L: 有记忆体分页分配并锁在记忆体内 (即时系统或捱A I/O)    START: 行程开始时间    TIME: 执行的时间</p>
+<p>COMMAND:所执行的指令</p>
+<p><em>实时监测进程</em> <code>top</code></p>
+<p><em>杀死进程</em> <code>kill</code></p>
+<p><em>协程</em> <code>coproc</code></p>
+<hr>
+<p><strong>用户管理命令</strong></p>
+<p><em>增加用户</em> <code>useradd</code></p>
+<p><em>更改密码</em> <code>passwd</code>【passwd        name    password】</p>
+<p><em>删除用户</em> <code>userdel</code>        -r同时删除用户目录</p>
+<p><em>查看用户UID</em> <code>ID</code></p>
+<p><em>root切换</em> <code>su</code> <code>sudo</code></p>
+<p><em>查看登录人员</em> <code>who</code>        tty本机，pts远程        uptime持续运行时间</p>
+<p><em>用户登录及机器关开机查找</em> <code>last</code></p>
+<p><em>查找用户最后登录信息</em> <code>lastlog</code>        -u以UID查找</p>
+<hr>
+<p><strong>压缩解压</strong></p>
+<p><em>gzip压缩</em> <code>gzip</code></p>
+<p><em>tar压缩解压</em> <code>tar</code>        -c打包    -v显示详细信息    -f指定文件名        -x解包        -z解压缩        -Z打包同时压缩</p>
+<p><em>zip压缩解压</em> <code>zip</code>        -r压缩目录    -unzip解压缩</p>
+<hr>
+<p><strong>网络命令</strong></p>
+<p><em>给指定用户发送信息</em> <code>write</code>【write    name    message】    ctrl+backspace删除，ctrl+D发送</p>
+<p><em>给所有用户发送</em> <code>wall</code>【wall    message】</p>
+<p><em>ping</em><code>ping</code>        -c指定发送次数</p>
+<p><em>查看当前网络配置</em> <code>ifconfig</code></p>
+<p><em>到指定网址的距离</em> <code>traceroute</code></p>
+<p><em>显示网络相关信息</em><code>netstat</code>        -t TCP协议    -u UDP协议    -l 监听    -r路由    -n显示ip地址及端口</p>
+<p><em>配置</em> <code>setup</code>（Redhat系列）</p>
+<hr>
+<p><strong>杂例</strong></p>
+<p><em>退出</em> <code>exit</code></p>
+<p><em>了解某个命令是否内建</em> <code>type</code></p>
+<p><em>查看历史命令</em> <code>history</code> </p>
+<p><em>查看最近几个命令</em> <code>!!</code></p>
+<p><em>命令别名</em> <code>alias</code>        -p显示当前可用别名</p>
+<p><em>查看全局变量</em> <code>env</code> <code>printenv</code></p>
+<p><em>显示个别环境变量</em> <code>printenv</code></p>
+<p><em>局部环境变量设置</em> <code>set</code></p>
+<p><em>删除环境变量</em> <code>unset</code></p>
+<p><em>打印</em> <code>echo</code></p>
+<p><em>统计文件字数</em>： <code>wc</code>        -c 统计字节数        -w统计单词数        -l统计行数</p>
+<p><img src="https://s1.ax2x.com/2018/03/16/epmpR.png" alt="epmpR.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/17/linuxandshell/" data-id="cjewvssqv000404w47qj3mzel" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/16/ssh connect to host gitbub.com port 22 Connection timed out/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ssh connect to host gitbub.com port 22 Connection timed out</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">shippowolf的博客</h1>
+    <h2 class="blog-subtitle">dallarwolf@Foxmail.com</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://s1.ax2x.com/2018/03/18/egzjA.jpg">
+    <h2 class="author">shippowolf</h2>
+    <h3 class="description">菜鸡，furry，如果能变成大牛那就太好了</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>3</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>1</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>1</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/wolfshippo" target="_blank" title="">
+          
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://weibo.com/shippowolf" target="_blank" title="weibo">
+          weibo
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://github.com/wolfshippo" target="_blank" title="github">
+          github
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2017 - 2018 shippowolf<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/archives" title="" class="menuItem">缩略</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
